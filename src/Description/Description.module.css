@@ -1,0 +1,13 @@
+.DescriptionBox{
+    display: flex;
+    margin-left: 40px;
+}
+
+.DescriptionTitle {
+    display: flex; 
+    margin-left: 40px;
+}
+
+.DescriptionText {
+    margin-left: 40px;
+}
