@@ -18,14 +18,24 @@ const App = () => {
 
     const [filter, setFilter] = useState("");
     const filterContacts = contacts.filter(contact => contact.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase()));
-
+    const deleteContacts = (contactId) => {
+      setContacts((prev) => {
+        return prev.filter((contact) => contact.id !== contactId);
+      })
+    }
   return (
     <>
     <div className={css.block}>
       <h1>Phonebook</h1>
-      <ContactForm onAdd={addContact}/>
-      <SearchBox value={filter} onFilter={setFilter}/>
-      <ContactList contacts={filterContacts}/>
+      <ContactForm 
+                onAdd={addContact}/>
+      <SearchBox 
+                value={filter} 
+                onFilter={setFilter}/>
+      <ContactList 
+                contacts={filterContacts}
+                onDelete={deleteContacts}
+                />
     </div>
     </>
   );
